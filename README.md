@@ -27,43 +27,37 @@ The predictors chosen for this analysis were potential health and economic indic
 
 It can be concluded that these models performed well, as MSE, MAE, and MAPE values were low (for example, MSE was ~13 for each model) and R^2 was high at ~0.81-0.82 for the models. They also weren’t overfit, which is supported by the metrics like R^2, where the test predictions weren’t less than the training predictions. Residuals also clustered around 0, where closer to 0 means more accurate predictions. When comparing the three models, regularization did improve performance. For instance, when looking at the R^2 metric, it was 0.8198 without regularization, 0.8120 with ridge regularization, and 0.8201 with lasso regularization. While this improvement isn’t significant, the change still exists and represents how regularization can adjust coefficients to affect predictor influence. There are a few reasons why the improvement wasn’t drastic. First, the predictors chosen for this model already had good correlation (see Figure for Question 4 section). Regularization tends to favor predictors with good correlation, so it’s not surprising that they didn’t adjust the coefficients too much. Second, this model has low complexity since there were only 9 predictors included and the number of examples wasn’t significantly large. Overall, though a small change, lasso and ridge did improve model performance with lasso increasing it the most. For a problem involving bigger data sets and higher complexity, regularization is an efficient technique for adjusting predictors, especially lasso if there is a stronger need for variable selection.
 
-<p float="left">
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/LR_coeff.jpg" 
-    width="400" 
-    height="300">  
-  &emsp;&emsp;
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/LR_residual.jpg" 
-    width="400" 
-    height="300">
-</p>
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/LR_coeff.jpg" 
+  width="400" 
+  height="300">  
+**Figure 1: Coefficient values for Linear Regression Model**
 
-**Figure 1: Coefficient values for Linear Regression Model**&emsp;&emsp;**Figure 2: Residual Plot for Linear Regression Model**
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/LR_residual.jpg" 
+  width="400" 
+  height="300">  
+**Figure 2: Residual Plot for Linear Regression Model**
 <br></br>
 
-<p float="left">
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Lasso_coeff.jpg" 
-    width="400" 
-    height="300">  
-  &emsp;&emsp;
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Lasso_residual.jpg" 
-    width="400" 
-    height="300">
-</p>
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Lasso_coeff.jpg" 
+  width="400" 
+  height="300">  
+**Figure 3: Coefficient values for Lasso Regularization**
 
-**Figure 3: Coefficient values for Lasso Regularization**&emsp;&emsp;&emsp;**Figure 4: Residual Plot for Lasso Regularization**
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Lasso_residual.jpg" 
+  width="400" 
+  height="300">  
+**Figure 4: Residual Plot for Lasso Regularization**
 <br></br>
 
-<p float="left">
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Ridge_coeff.jpg" 
-    width="400" 
-    height="300">  
-  &emsp;&emsp;
-  <img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Ridge_residual.jpg" 
-    width="400" 
-    height="300">
-</p>
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Ridge_coeff.jpg" 
+  width="400" 
+  height="300">  
+**Figure 5: Coefficient values for Ridge Regularization**
 
-**Figure 5: Coefficient values for Ridge Regularization**&emsp;&emsp;&emsp;**Figure 6: Residual Plot for Ridge Regularization**
+<img src="https://github.com/cbellerob/LifeExpectancy-CPSC392/blob/main/Visualization/Ridge_residual.jpg" 
+  width="400" 
+  height="300">  
+**Figure 6: Residual Plot for Ridge Regularization**
 <br></br>
 
 ### Question 2: Would performing PCA on the whole data set improve K-Means clustering more than performing PCA on select features? When focusing on life expectancy, which variables are highly correlated and would benefit from PCA, and which ones would be better off without PCA, if any?  
